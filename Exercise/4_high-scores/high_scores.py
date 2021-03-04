@@ -1,8 +1,11 @@
 def latest(scores):
+    # print(scores[-1])
+    # print(scores[len(scores)-1])
     return scores[len(scores)-1]
 
 
 def personal_best(scores):
+    # max(scores) is also same
     return sorted(scores, reverse=True)[0]
 
 

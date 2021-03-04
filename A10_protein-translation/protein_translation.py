@@ -19,7 +19,21 @@ protein_items = {"AUG": "Methionine",
 
 
 def proteins(strand):
-    pass
+    # break then into 3
+    multiples_3 = 3
+    initial_num = 0
+    proteins = []
+    translations = ()
+    while multiples_3 <= len(strand):
+        translations = translations + \
+            tuple(protein_items[strand[initial_num:multiples_3]])
+        proteins.append(strand[initial_num:multiples_3])
+        initial_num = multiples_3
+        multiples_3 += 3
+    print(proteins)
+    print(translations)
+
+    all_proteins = strand[0]
 
 
 proteins("AUGUUUUGG")
