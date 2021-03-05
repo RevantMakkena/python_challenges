@@ -23,17 +23,19 @@ def proteins(strand):
     multiples_3 = 3
     initial_num = 0
     proteins = []
-    translations = ()
+    target_proteins = []
     while multiples_3 <= len(strand):
-        translations = translations + \
-            tuple(protein_items[strand[initial_num:multiples_3]])
-        proteins.append(strand[initial_num:multiples_3])
+        if strand[initial_num:multiples_3] not in proteins:
+            proteins.append(strand[initial_num:multiples_3])
         initial_num = multiples_3
         multiples_3 += 3
-    print(proteins)
-    print(translations)
 
-    all_proteins = strand[0]
+    for i in proteins:
+        if(protein_items[i] == "STOP"):
+            break
+        target_proteins.append(protein_items[i])
+
+    return target_proteins
 
 
-proteins("AUGUUUUGG")
+# proteins("UGGUGUUAUUAAUGGUUU")
