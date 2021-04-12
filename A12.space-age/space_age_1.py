@@ -1,5 +1,4 @@
 class SpaceAge(object):
-
     ORBITAL_PERIODS = [(k, v * 31557600) for k, v in (
         ('earth', 1.0),
         ('mercury', 0.2408467),
